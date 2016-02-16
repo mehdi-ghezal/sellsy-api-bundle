@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "57d86579ce8028743e7b1b7ed4e6e9fe",
+    "hash": "afc4b1ae5182a6e1eab24ef4aa1bbd62",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -400,11 +400,7 @@
                     "Sellsy\\": "src/Sellsy/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Sellsy\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -419,10 +415,6 @@
                 "api",
                 "sellsy"
             ],
-            "support": {
-                "source": "https://github.com/mehdi-ghezal/sellsy-api/tree/master",
-                "issues": "https://github.com/mehdi-ghezal/sellsy-api/issues"
-            },
             "time": "2016-02-16 09:14:23"
         },
         {
