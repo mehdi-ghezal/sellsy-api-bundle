@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "afc4b1ae5182a6e1eab24ef4aa1bbd62",
+    "hash": "994a112dfcfc49e8594c4f7c2cfb251e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -375,12 +375,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mehdi-ghezal/sellsy-api.git",
-                "reference": "2cca3d758814024b369f771b4454b6e27a44d10b"
+                "reference": "6b3be934fdd2650e21398afb7378d33d41a8d098"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mehdi-ghezal/sellsy-api/zipball/2cca3d758814024b369f771b4454b6e27a44d10b",
-                "reference": "2cca3d758814024b369f771b4454b6e27a44d10b",
+                "url": "https://api.github.com/repos/mehdi-ghezal/sellsy-api/zipball/6b3be934fdd2650e21398afb7378d33d41a8d098",
+                "reference": "6b3be934fdd2650e21398afb7378d33d41a8d098",
                 "shasum": ""
             },
             "require": {
@@ -395,6 +395,11 @@
                 "rtheunissen/guzzle-log-middleware": "0.4.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Sellsy\\": "src/Sellsy/"
@@ -415,7 +420,7 @@
                 "api",
                 "sellsy"
             ],
-            "time": "2016-02-16 09:14:23"
+            "time": "2016-02-16 11:13:16"
         },
         {
             "name": "minime/annotations",
