@@ -1,6 +1,6 @@
 # Sellsy-api-bundle
 
-Symfony bundle for [mehdi_ghezal/sellsy-api](https://github.com/mehdi-ghezal/sellsy-api) ; a PHP Wrapper for [Sellsy API](https://www.sellsy.fr/)
+Symfony bundle for [mehdi-ghezal/sellsy-api](https://github.com/mehdi-ghezal/sellsy-api) ; a PHP Wrapper for [Sellsy API](https://www.sellsy.fr/)
 
 # Status 
 
