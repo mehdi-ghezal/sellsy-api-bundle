@@ -1,0 +1,33 @@
+{
+    "name": "mehdi-ghezal/sellsy-api-bundle",
+    "description": "Symfony Bundle for Sellsy API",
+    "keywords": ["sellsy", "api", "symfony", "bundle"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mehdi Ghezal",
+            "email": "mehdi.ghezal@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "mehdi-ghezal/sellsy-api": "dev-master",
+        "symfony/framework-bundle": "~2.3|~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mehdi-ghezal/sellsy-api"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sellsy\\ApiBundle\\": ""
+        }
+    },
+    "target-dir": "mehdi-ghezal/SellsyApiBundle"
+}
