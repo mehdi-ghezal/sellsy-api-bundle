@@ -23,7 +23,8 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('authentication')
-                    ->addDefaultsIfNotSet()
+                    ->isRequired()
+                    ->cannotBeEmpty()
                     ->children()
                         ->scalarNode('consumer_token')->isRequired()->cannotBeEmpty()->end()
                         ->scalarNode('consumer_secret')->isRequired()->cannotBeEmpty()->end()

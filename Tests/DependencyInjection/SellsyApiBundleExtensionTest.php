@@ -1,17 +1,17 @@
 <?php
 
 namespace Sellsy\ApiBundle\Tests\DependencyInjection;
-use Sellsy\ApiBundle\DependencyInjection\SellsyApiBundleExtension;
+use Sellsy\ApiBundle\DependencyInjection\SellsyApiExtension;
 use Sellsy\ApiBundle\Tests\Fixtures\Credentials;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Yaml\Parser;
 
 /**
- * Class SellsyApiBundleExtensionTest
+ * Class SellsyApiExtensionTest
  *
  * @package Sellsy\ApiBundle\Tests\DependencyInjection
  */
-class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
+class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /** @var ContainerBuilder */
     protected $configuration;
@@ -21,7 +21,7 @@ class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserLoadThrowsExceptionUnlessConsummerTokenIsSet()
     {
-        $loader = new SellsyApiBundleExtension();
+        $loader = new SellsyApiExtension();
         $config = $this->getConfiguration();
 
         unset($config['authentication']['consumer_token']);
@@ -34,7 +34,7 @@ class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserLoadThrowsExceptionUnlessConsummerSecretIsSet()
     {
-        $loader = new SellsyApiBundleExtension();
+        $loader = new SellsyApiExtension();
         $config = $this->getConfiguration();
 
         unset($config['authentication']['consumer_secret']);
@@ -47,7 +47,7 @@ class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserLoadThrowsExceptionUnlessUserTokenIsSet()
     {
-        $loader = new SellsyApiBundleExtension();
+        $loader = new SellsyApiExtension();
         $config = $this->getConfiguration();
 
         unset($config['authentication']['user_token']);
@@ -60,7 +60,7 @@ class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserLoadThrowsExceptionUnlessUserSecretIsSet()
     {
-        $loader = new SellsyApiBundleExtension();
+        $loader = new SellsyApiExtension();
         $config = $this->getConfiguration();
 
         unset($config['authentication']['user_secret']);
@@ -113,7 +113,7 @@ class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
 
         $config['authentication']['consumer_token'] = 'XXX';
 
-        $loader = new SellsyApiBundleExtension();
+        $loader = new SellsyApiExtension();
         $loader->load(array($config), $this->configuration);
 
         /** @var \Sellsy\Client $client */
@@ -155,7 +155,7 @@ class SellsyApiBundleExtensionTest extends \PHPUnit_Framework_TestCase
         $this->configuration = new ContainerBuilder();
         $config = $this->getConfiguration();
 
-        $loader = new SellsyApiBundleExtension();
+        $loader = new SellsyApiExtension();
         $loader->load(array($config), $this->configuration);
 
         $this->assertTrue(($this->configuration->hasDefinition($id) ?: $this->configuration->hasAlias($id)));

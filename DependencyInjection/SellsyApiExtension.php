@@ -8,11 +8,11 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * Class SellsyApiBundleExtension
+ * Class SellsyApiExtension
  *
  * @package Sellsy\ApiBundle\DependencyInjection
  */
-class SellsyApiBundleExtension extends Extension
+class SellsyApiExtension extends Extension
 {
     /**
      * {@inheritDoc}

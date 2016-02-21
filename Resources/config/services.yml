@@ -1,37 +1,42 @@
 services:
     sellsy_api.parser:
-        class: \Minime\Annotations\Parser
+        public: false
+        class: Minime\Annotations\Parser
 
     sellsy_api.cache:
-        class: \Minime\Annotations\Cache\ArrayCache
+        public: false
+        class: Minime\Annotations\Cache\ArrayCache
 
     sellsy_api.reader:
-        class: \Minime\Annotations\Reader
+        public: false
+        class: Minime\Annotations\Reader
         arguments:
             - "@sellsy_api.parser"
             - "@sellsy_api.cache"
 
     sellsy_api.mapper:
-        class: \Sellsy\Mappers\MinimeMapper
+        public: false
+        class: Sellsy\Mappers\MinimeMapper
         arguments:
             - "@sellsy_api.reader"
 
     sellsy_api.transport:
-        class: \Sellsy\Transports\Httpful
+        class: Sellsy\Transports\Httpful
         arguments:
-            - %sellsy_api.authentication.consumer.token%
-            - %sellsy_api.authentication.consumer.secret%
-            - %sellsy_api.authentication.user.token%
-            - %sellsy_api.authentication.user.secret%
+            - "%sellsy_api.authentication.consumer.token%"
+            - "%sellsy_api.authentication.consumer.secret%"
+            - "%sellsy_api.authentication.user.token%"
+            - "%sellsy_api.authentication.user.secret%"
 
     sellsy_api.adapter:
-        class: \Sellsy\Adapters\MapperAdapter
+        public: false
+        class: Sellsy\Adapters\MapperAdapter
         arguments:
             - "@sellsy_api.transport"
             - "@sellsy_api.mapper"
 
     sellsy_api.client:
-        class: \Sellsy\Client
+        class: Sellsy\Client
         arguments:
             - "@sellsy_api.adapter"
 

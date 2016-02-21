@@ -17,7 +17,7 @@ Require the bundle with composer:
 
 .. code-block:: bash
 
-    $ composer require mehdi-ghezal/sellsy-api-bundle "dev-master"
+    $ composer require mehdi-ghezal/sellsy-api-bundle "~1.0@dev"
 
 Composer will install the bundle to your project's ``vendor/mehdi-ghezal/SellsyApiBundle`` directory.
 
@@ -43,14 +43,14 @@ Step 5: Configure the SellsyApiBundle
 
 Add the following configuration to your ``config.yml`` file
 
-.. configuration-block::
+.. code-block:: yaml
 
-    .. code-block:: yaml
+    # app/config/config.yml
+    sellsy_api:
+        authentication:
+            consumer_token:     "your_consumer_token"   # Required
+            consumer_secret:    "your_consumer_secret"  # Required
+            user_token:         "your_user_token"       # Required
+            user_secret:        "your_user_secret"      # Required
 
-        # app/config/config.yml
-        sellsy_api:
-            authentication:
-                consumer_token:     "your_consumer_token"   # Required
-                consumer_secret:    "your_consumer_secret"  # Required
-                user_token:         "your_user_token"       # Required
-                user_secret:        "your_user_secret"      # Required
+
