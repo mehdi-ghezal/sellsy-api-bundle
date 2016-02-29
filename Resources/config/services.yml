@@ -28,15 +28,26 @@ services:
             - "%sellsy_api.authentication.user.token%"
             - "%sellsy_api.authentication.user.secret%"
 
-    sellsy_api.adapter:
+    sellsy_api.adapters.base:
+        public: false
+        class: Sellsy\Adapters\BaseAdapter
+        arguments:
+            - "@sellsy_api.transport"
+
+    sellsy_api.adapters.mapper:
         public: false
         class: Sellsy\Adapters\MapperAdapter
         arguments:
             - "@sellsy_api.transport"
             - "@sellsy_api.mapper"
 
-    sellsy_api.client:
+    sellsy_api.client.base:
         class: Sellsy\Client
         arguments:
-            - "@sellsy_api.adapter"
+            - "@sellsy_api.adapters.base"
+
+    sellsy_api.client.object:
+        class: Sellsy\Client
+        arguments:
+            - "@sellsy_api.adapters.mapper"
 
