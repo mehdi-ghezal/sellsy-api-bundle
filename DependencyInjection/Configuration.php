@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('sellsy_api');
         $rootNode
             ->children()
-                ->scalarNode('adapter')->isRequired()->cannotBeEmpty()->defaultValue('mapper')
+                ->scalarNode('adapter')->defaultValue('mapper')
                     ->validate()
                         ->ifNotInArray(array('base', 'mapper'))
                         ->thenInvalid('Configuration "adapter" is required and can have one of the following values: base, mapper')
