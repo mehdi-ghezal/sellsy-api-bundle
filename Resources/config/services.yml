@@ -26,6 +26,4 @@ services:
 
     sellsy_api.client:
         class: Sellsy\Client
-        arguments:
-            - "%sellsy_api.adapter%"
 

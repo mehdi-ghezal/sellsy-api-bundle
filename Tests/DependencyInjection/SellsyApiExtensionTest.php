@@ -13,9 +13,6 @@ use Symfony\Component\Yaml\Parser;
  */
 class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var ContainerBuilder */
-    protected $configuration;
-
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
@@ -93,21 +90,32 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
         return $this->assertHasDefinition('sellsy_api.client');
     }
 
+    public function testCompileContainer()
+    {
+        $configuration = new ContainerBuilder();
+        $config = $this->getConfiguration();
+
+        $loader = new SellsyApiExtension();
+        $loader->load(array($config), $configuration);
+
+        $configuration->compile();
+    }
+
     /**
      * @expectedException \Sellsy\Exception\ServerException
      */
     public function testSellsyApiClientConnectError()
     {
-        $this->configuration = new ContainerBuilder();
+        $configuration = new ContainerBuilder();
         $config = $this->getConfiguration();
 
         $config['authentication']['consumer_token'] = 'XXX';
 
         $loader = new SellsyApiExtension();
-        $loader->load(array($config), $this->configuration);
+        $loader->load(array($config), $configuration);
 
         /** @var \Sellsy\Client $client */
-        $client = $this->configuration->get('sellsy_api.client');
+        $client = $configuration->get('sellsy_api.client');
         $client->getApiInfos();
     }
 
@@ -142,14 +150,14 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
      */
     private function assertHasDefinition($id)
     {
-        $this->configuration = new ContainerBuilder();
+        $configuration = new ContainerBuilder();
         $config = $this->getConfiguration();
 
         $loader = new SellsyApiExtension();
-        $loader->load(array($config), $this->configuration);
+        $loader->load(array($config), $configuration);
 
-        $this->assertTrue(($this->configuration->hasDefinition($id) ?: $this->configuration->hasAlias($id)));
+        $this->assertTrue(($configuration->hasDefinition($id) ?: $configuration->hasAlias($id)));
 
-        return $this->configuration->get($id);
+        return $configuration->get($id);
     }
 }
