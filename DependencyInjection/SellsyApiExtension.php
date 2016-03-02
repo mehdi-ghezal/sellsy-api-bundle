@@ -4,6 +4,7 @@ namespace Sellsy\ApiBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
@@ -29,5 +30,14 @@ class SellsyApiExtension extends Extension
         $container->setParameter('sellsy_api.authentication.consumer.secret', $config['authentication']['consumer_secret']);
         $container->setParameter('sellsy_api.authentication.user.token', $config['authentication']['user_token']);
         $container->setParameter('sellsy_api.authentication.user.secret', $config['authentication']['user_secret']);
+
+        switch($config['adapter']) {
+            case 'base':
+                $container->setParameter('sellsy_api.adapter', new Reference('sellsy_api.adapters.base'));
+                break;
+            case 'mapper':
+                $container->setParameter('sellsy_api.adapter', new Reference('sellsy_api.adapters.mapper'));
+                break;
+        }
     }
 }

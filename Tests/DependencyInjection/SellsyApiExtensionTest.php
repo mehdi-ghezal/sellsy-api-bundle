@@ -68,21 +68,6 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
         $loader->load(array($config), new ContainerBuilder());
     }
 
-    public function testSellsyApiHasParserService()
-    {
-        return $this->assertHasDefinition('sellsy_api.parser');
-    }
-
-    public function testSellsyApiHasCacheService()
-    {
-        return $this->assertHasDefinition('sellsy_api.cache');
-    }
-
-    public function testSellsyApiHasReaderService()
-    {
-        return $this->assertHasDefinition('sellsy_api.reader');
-    }
-
     public function testSellsyApiHasMapperService()
     {
         return $this->assertHasDefinition('sellsy_api.mapper');
@@ -93,9 +78,14 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
         return $this->assertHasDefinition('sellsy_api.transport');
     }
 
-    public function testSellsyApiHasAdapterService()
+    public function testSellsyApiHasAdapterBaseService()
     {
-        return $this->assertHasDefinition('sellsy_api.adapter');
+        return $this->assertHasDefinition('sellsy_api.adapters.base');
+    }
+
+    public function testSellsyApiHasAdapterMapperService()
+    {
+        return $this->assertHasDefinition('sellsy_api.adapters.mapper');
     }
 
     public function testSellsyApiHasClientService()
@@ -134,8 +124,8 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
      */
     protected function getConfiguration()
     {
-        $yaml = sprintf('authentication: %s', PHP_EOL);
-
+        $yaml  = sprintf('adapter: mapper%s', PHP_EOL);
+        $yaml .= sprintf('authentication: %s', PHP_EOL);
         $yaml .= sprintf('    consumer_token: "%s" %s', Credentials::$consumerToken, PHP_EOL);
         $yaml .= sprintf('    consumer_secret: "%s" %s', Credentials::$consumerSecret, PHP_EOL);
         $yaml .= sprintf('    user_token: "%s" %s', Credentials::$userToken, PHP_EOL);

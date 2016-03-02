@@ -1,24 +1,7 @@
 services:
-    sellsy_api.parser:
-        public: false
-        class: Minime\Annotations\Parser
-
-    sellsy_api.cache:
-        public: false
-        class: Minime\Annotations\Cache\ArrayCache
-
-    sellsy_api.reader:
-        public: false
-        class: Minime\Annotations\Reader
-        arguments:
-            - "@sellsy_api.parser"
-            - "@sellsy_api.cache"
-
     sellsy_api.mapper:
         public: false
-        class: Sellsy\Mappers\MinimeMapper
-        arguments:
-            - "@sellsy_api.reader"
+        class: Sellsy\Mappers\YmlMapper
 
     sellsy_api.transport:
         class: Sellsy\Transports\Httpful
@@ -41,13 +24,8 @@ services:
             - "@sellsy_api.transport"
             - "@sellsy_api.mapper"
 
-    sellsy_api.client.base:
+    sellsy_api.client:
         class: Sellsy\Client
         arguments:
-            - "@sellsy_api.adapters.base"
-
-    sellsy_api.client.object:
-        class: Sellsy\Client
-        arguments:
-            - "@sellsy_api.adapters.mapper"
+            - "%sellsy_api.adapter%"
 
