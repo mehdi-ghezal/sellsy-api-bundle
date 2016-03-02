@@ -31,6 +31,12 @@ class SellsyApiExtension extends Extension
         $container->setParameter('sellsy_api.authentication.user.token', $config['authentication']['user_token']);
         $container->setParameter('sellsy_api.authentication.user.secret', $config['authentication']['user_secret']);
 
+        $mapper = $container->getDefinition('sellsy_api.mapper');
+
+        foreach($config['resolve_class'] as $interface => $class) {
+            $mapper->addMethodCall('setInterfaceMapping', array($interface, $class));
+        }
+
         $container->getDefinition('sellsy_api.client')->addArgument(new Reference('sellsy_api.adapters.' . $config['adapter']));
     }
 }

@@ -38,6 +38,12 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('user_secret')->isRequired()->cannotBeEmpty()->end()
                     ->end()
                 ->end()
+                ->arrayNode('resolve_class')
+                    ->useAttributeAsKey('interface')
+                        ->prototype('scalar')
+                        ->defaultValue(array())
+                    ->end()
+                ->end()
             ->end()
         ->end()
         ;
