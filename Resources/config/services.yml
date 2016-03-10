@@ -25,5 +25,5 @@ services:
             - "@sellsy_api.mapper"
 
     sellsy_api.client:
-        class: Sellsy\Client
+        class: Sellsy\Api
 

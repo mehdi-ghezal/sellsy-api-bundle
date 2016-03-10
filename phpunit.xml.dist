@@ -8,9 +8,19 @@
         convertWarningsToExceptions="true"
         stopOnFailure="false"
         bootstrap="tests/bootstrap.php"
-        verbose="true">
+        verbose="true"
+>
+    <php>
+        <ini name="error_reporting" value="-1" />
+
+        <const name="SELLSY_CONSUMER_TOKEN" value="" />
+        <const name="SELLSY_CONSUMER_SECRET" value="" />
+        <const name="SELLSY_USER_TOKEN" value="" />
+        <const name="SELLSY_USER_SECRET" value="" />
+    </php>
+
     <testsuites>
-        <testsuite name="SellsyApiBbundle Test Suite">
+        <testsuite name="Bundle">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>

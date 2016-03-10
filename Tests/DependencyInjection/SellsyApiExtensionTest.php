@@ -114,7 +114,7 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
         $loader = new SellsyApiExtension();
         $loader->load(array($config), $configuration);
 
-        /** @var \Sellsy\Client $client */
+        /** @var \Sellsy\Api $client */
         $client = $configuration->get('sellsy_api.client');
         $client->getApiInfos();
     }
@@ -122,22 +122,32 @@ class SellsyApiExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @depends testSellsyApiHasClientService
      */
-    public function testSellsyApiClientConnect(\Sellsy\Client $client)
+    public function testSellsyApiClientConnect(\Sellsy\Api $client)
     {
-        $this->assertEquals('ok', $client->getApiInfos()->status);
+        $this->assertEquals('ok', $client->getApiInfos()->getStatus());
     }
 
     /**
      * @return mixed
+     *
      */
     protected function getConfiguration()
     {
         $yaml  = sprintf('adapter: mapper%s', PHP_EOL);
+
         $yaml .= sprintf('authentication: %s', PHP_EOL);
-        $yaml .= sprintf('    consumer_token: "%s" %s', Credentials::$consumerToken, PHP_EOL);
-        $yaml .= sprintf('    consumer_secret: "%s" %s', Credentials::$consumerSecret, PHP_EOL);
-        $yaml .= sprintf('    user_token: "%s" %s', Credentials::$userToken, PHP_EOL);
-        $yaml .= sprintf('    user_secret: "%s" %s', Credentials::$userSecret, PHP_EOL);
+
+        /** @noinspection PhpUndefinedConstantInspection */
+        $yaml .= sprintf('    consumer_token: "%s" %s', SELLSY_CONSUMER_TOKEN, PHP_EOL);
+
+        /** @noinspection PhpUndefinedConstantInspection */
+        $yaml .= sprintf('    consumer_secret: "%s" %s', SELLSY_CONSUMER_SECRET, PHP_EOL);
+
+        /** @noinspection PhpUndefinedConstantInspection */
+        $yaml .= sprintf('    user_token: "%s" %s', SELLSY_USER_TOKEN, PHP_EOL);
+
+        /** @noinspection PhpUndefinedConstantInspection */
+        $yaml .= sprintf('    user_secret: "%s" %s', SELLSY_USER_SECRET, PHP_EOL);
 
         $parser = new Parser();
 

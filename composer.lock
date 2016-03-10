@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "994a112dfcfc49e8594c4f7c2cfb251e",
+    "content-hash": "bc6171e9570ddcf8770ef60bae5e5912",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -316,16 +317,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea"
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/b1e1c0d55f8083c71eda2c28c12a228d708294ea",
-                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/bb9024c526b22f3fe6ae55a561fd70653d470aa8",
+                "reference": "bb9024c526b22f3fe6ae55a561fd70653d470aa8",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +364,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-10-15 22:28:00"
+            "time": "2016-03-08 01:15:46"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -429,12 +430,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mehdi-ghezal/sellsy-api.git",
-                "reference": "affaecad4d164e4c9c1e85f9cf360b3fdb60f228"
+                "reference": "f1c30c0d664ff1656d3909e39c7f0ef20b3f7a76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mehdi-ghezal/sellsy-api/zipball/affaecad4d164e4c9c1e85f9cf360b3fdb60f228",
-                "reference": "affaecad4d164e4c9c1e85f9cf360b3fdb60f228",
+                "url": "https://api.github.com/repos/mehdi-ghezal/sellsy-api/zipball/f1c30c0d664ff1656d3909e39c7f0ef20b3f7a76",
+                "reference": "f1c30c0d664ff1656d3909e39c7f0ef20b3f7a76",
                 "shasum": ""
             },
             "require": {
@@ -474,7 +475,7 @@
                 "api",
                 "sellsy"
             ],
-            "time": "2016-03-02 04:55:01"
+            "time": "2016-03-10 05:52:53"
         },
         {
             "name": "nategood/httpful",
@@ -1375,7 +1376,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -1434,7 +1435,7 @@
         },
         {
             "name": "symfony/polyfill-php56",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php56.git",
@@ -1490,16 +1491,16 @@
         },
         {
             "name": "symfony/polyfill-php70",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "8428ceddbbaf102f2906769a8ef2438220c5cb95"
+                "reference": "386c1be9cad3ab531425211919e78c37971be4ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/8428ceddbbaf102f2906769a8ef2438220c5cb95",
-                "reference": "8428ceddbbaf102f2906769a8ef2438220c5cb95",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/386c1be9cad3ab531425211919e78c37971be4ce",
+                "reference": "386c1be9cad3ab531425211919e78c37971be4ce",
                 "shasum": ""
             },
             "require": {
@@ -1545,11 +1546,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-25 08:44:42"
+            "time": "2016-01-28 22:42:02"
         },
         {
             "name": "symfony/polyfill-util",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-util.git",
@@ -2017,55 +2018,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "minime/annotations",
-            "version": "2.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/marcioAlmada/annotations.git",
-                "reference": "434435902b7dcad927c9fd06e69be72e150cbf84"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/marcioAlmada/annotations/zipball/434435902b7dcad927c9fd06e69be72e150cbf84",
-                "reference": "434435902b7dcad927c9fd06e69be72e150cbf84",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.4.0",
-                "regex-guard/regex-guard": "~1.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Minime\\Annotations\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márcio Almada",
-                    "email": "marcio3w@gmail.com",
-                    "homepage": "https://github.com/marcioAlmada/"
-                }
-            ],
-            "description": "The KISS PHP annotations library",
-            "keywords": [
-                "annotations",
-                "docblock",
-                "metadata",
-                "php",
-                "reflection"
-            ],
-            "time": "2015-09-16 23:08:34"
-        },
         {
             "name": "phpdocumentor/reflection-docblock",
             "version": "2.0.4",
@@ -2544,51 +2496,6 @@
                 "xunit"
             ],
             "time": "2015-10-02 06:51:40"
-        },
-        {
-            "name": "regex-guard/regex-guard",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/marcioAlmada/regex-guard.git",
-                "reference": "dc9a8199f4ebef4c21603ad1f6a8cb53542e7d29"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/marcioAlmada/regex-guard/zipball/dc9a8199f4ebef4c21603ad1f6a8cb53542e7d29",
-                "reference": "dc9a8199f4ebef4c21603ad1f6a8cb53542e7d29",
-                "shasum": ""
-            },
-            "require-dev": {
-                "mockery/mockery": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "RegexGuard\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márcio Almada",
-                    "email": "marcio3w@gmail.com",
-                    "homepage": "https://github.com/marcioAlmada/"
-                }
-            ],
-            "description": "A wrapper that allows you to validate regular expressions and handle normally uncatchable PCRE compilation warnings",
-            "keywords": [
-                "PCRE",
-                "preg",
-                "regex",
-                "regexp",
-                "support",
-                "utils"
-            ],
-            "time": "2014-09-17 18:04:00"
         },
         {
             "name": "sebastian/comparator",
