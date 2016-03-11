@@ -430,12 +430,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mehdi-ghezal/sellsy-api.git",
-                "reference": "a0954014447862787d82932f411b26615d4fe8c9"
+                "reference": "7df3c3686cc23d66c110fc5b133e05d953815f21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mehdi-ghezal/sellsy-api/zipball/a0954014447862787d82932f411b26615d4fe8c9",
-                "reference": "a0954014447862787d82932f411b26615d4fe8c9",
+                "url": "https://api.github.com/repos/mehdi-ghezal/sellsy-api/zipball/7df3c3686cc23d66c110fc5b133e05d953815f21",
+                "reference": "7df3c3686cc23d66c110fc5b133e05d953815f21",
                 "shasum": ""
             },
             "require": {
@@ -475,7 +475,7 @@
                 "api",
                 "sellsy"
             ],
-            "time": "2016-03-10 12:00:34"
+            "time": "2016-03-11 01:10:56"
         },
         {
             "name": "nategood/httpful",
